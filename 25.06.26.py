@@ -1,3 +1,4 @@
+import random
 # name = input("Введите ваше имя ")
 # age = int(input("Введите ваш возраст "))
 # print(f"Имя - {name}. Возраст - {age} лет. ",end="")
@@ -32,6 +33,8 @@
 # b = int(input("Введите второе число "))
 # for i in range (a , b+1, 1):
 #     print(i)
+import random
+
 print()
 # num = 1
 # sum = 0
@@ -77,10 +80,42 @@ print()
 # print()
 
 
-storona = int(input("введите сторону квадрата "))
-for i in range(1, (storona+1)//2, 1):
-    for j in range( i,):
-        print("* ",end=" ")
-    print()
+# storona = int(input("введите сторону квадрата "))
+# for i in range(0,(storona+1)//2):
+#     for j in range(0,i):
+#         print(" ",end=" ")
+#     for n in range(0,storona-i*2):
+#         print("*", end=" ")
+#     print()
+sum_win_user = 0
+sum_win_computer = 0
+while True:
+    game = int(input("до скольки побед будет идти игра "))
+    for i in range(game):
+        numbers = random.randint(1,2)
+        if numbers == 1:
+            numbers = "нечет"
+        if numbers == 2:
+            numbers = "чет"
+        print(numbers)
+        user = input("Угадай что загадал компьютер: чет или нечет\n")
+        if user == numbers:
+            sum_win_user += 1
+            print("победа игрока")
+        else:
+            sum_win_computer += 1
+            print(f"ты проиграл. компьютер загодал {numbers}")
 
+    if sum_win_user > sum_win_computer:
+        print(f"ты победил со счетом {sum_win_user} : {sum_win_computer}")
+    elif sum_win_computer > sum_win_user:
+        print(f"победил компьютер со счетом {sum_win_computer} : {sum_win_user}")
+    else:
+        print("ничья")
 
+    input("сыграем еще? (y/x) ")
+    if "y" and "Y":
+         True
+    if "x" and "X":
+        print("пока")
+        break
