@@ -33,13 +33,13 @@ for i in range(len(numbers)):
 print("----------------")
 result = 0
 
-for i in range(len(numbers[0])):
-    summ = 0
-    for j in range(len(numbers)):
-        summ += numbers[j][i]
-    print("|",summ,end="\t")
-    result += summ
-print("|",result)
+# for i in range(len(numbers[0])):
+#     summ = 0
+#     for j in range(len(numbers)):
+#         summ += numbers[j][i]
+#     print("|",summ,end="\t")
+#     result += summ
+# print("|",result)
 
 
 
